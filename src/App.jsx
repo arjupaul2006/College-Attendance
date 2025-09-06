@@ -1,11 +1,14 @@
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './components/Home'
-import Navbar from './components/Navbar'
-import MarkAttend from './components/MarkAttend'
-import Ebook from './components/E-book'
-import Quiz from './components/Quiz'
 import Error from './components/Error'
+import Navbar from './components/student/Navbar'
+import Home from './components/student/Home'
+import MarkAttend from './components/student/MarkAttend'
+import Ebook from './components/student/E-book'
+import Quiz from './components/student/Quiz'
+import Welcome from './components/Welcome'
+import Login from './components/Login'
+import SignIn from './components/SignIn'
 
 function App() {
   
@@ -24,13 +27,37 @@ function App() {
         path: '/',
         element:
         <div>
+          <Welcome />
+        </div>
+      },
+
+      {
+        path: '/login',
+        element:
+        <div>
+          <Login />
+        </div>
+      },
+
+      {
+        path: '/signin',
+        element:
+        <div>
+          <SignIn />
+        </div>
+      },
+
+      {
+        path: '/student',
+        element:
+        <div>
           <Navbar />
           <Home />
         </div>
       },
 
       {
-        path: '/markAttendence',
+        path: '/student/markAttendence',
         element:
         <div>
           <Navbar />
@@ -39,7 +66,7 @@ function App() {
       },
 
       {
-        path: '/e-book',
+        path: '/student/e-book',
         element:
         <div>
           <Navbar />
@@ -48,7 +75,7 @@ function App() {
       },
 
       {
-        path: '/quiz',
+        path: '/student/quiz',
         element:
         <div>
           <Navbar />
