@@ -7,10 +7,22 @@ import MarkAttend from './components/student/MarkAttend'
 import Ebook from './components/student/E-book'
 import Quiz from './components/student/Quiz'
 import Welcome from './components/Welcome'
-import Login from './components/Login'
-import SignIn from './components/SignIn'
+import Login from './components/Login/Login'
+import SignIn from './components/SignIn/SignIn'
+import LoginStudent from './components/Login/LoginStudent'
+import LoginTeacher from './components/Login/LoginTeacher'
+import LoginAdmin from './components/Login/LoginAdmin'
+import SignInStudent from './components/SignIn/SignInStudent'
+import SignInTeacher from './components/SignIn/SignInTeacher'
+import SignInAdmin from './components/SignIn/SignInAdmin'
+import { useState } from 'react'
 
 function App() {
+
+  const data = {
+    name : 'Arju Paul',
+    password : 'Arju%2807'
+  }
   
   const router = createBrowserRouter( 
     [
@@ -40,10 +52,56 @@ function App() {
       },
 
       {
+        path: '/login/loginAsStudent',
+        element:
+        <div>
+          <LoginStudent />
+        </div>
+      },
+
+      {
+        path: '/login/loginAsTeacher',
+        element:
+        <div>
+          <LoginTeacher />
+        </div>
+      },
+
+      {
+        path: '/login/loginAsAdministrator',
+        element:
+        <div>
+          <LoginAdmin />
+        </div>
+      },
+
+      {
         path: '/signin',
         element:
         <div>
           <SignIn />
+        </div>
+      },
+
+      {
+        path: '/signin/signinAsStudent',
+        element:
+        <div>
+          <SignInStudent data={data}/>
+        </div>
+      },
+      {
+        path: '/signin/signinAsTeacher',
+        element:
+        <div>
+          <SignInTeacher />
+        </div>
+      },
+      {
+        path: '/signin/signinAsAdmintrator',
+        element:
+        <div>
+          <SignInAdmin />
         </div>
       },
 

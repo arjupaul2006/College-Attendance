@@ -1,9 +1,9 @@
 import React from "react";
-import background from "../assets/background.mp4";
+import background from "../../assets/background.mp4";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom'
 
-const SignIn = () => {
+const Login = () => {
   return (
     <>
       <div>
@@ -21,6 +21,7 @@ const SignIn = () => {
 
       {/* Text Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-[100vh] text-center text-white px-4">
+
         {/* Heading animation */}
         <motion.h1
           className="text-5xl font-bold mb-20"
@@ -28,10 +29,10 @@ const SignIn = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          SIGN IN
+          LOGIN
         </motion.h1>
 
-        <div className="flex flex-wrap justify-center items-center gap-3">
+        <div className="flex justify-center items-center gap-3">
           {/* Button animation */}
           <motion.button
             className="bg-red-600 px-6 py-3 rounded-2xl text-lg font-semibold shadow-lg hover:bg-red-800 transition hover:scale-75 hover:duration-700"
@@ -39,7 +40,7 @@ const SignIn = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.7, delay: 1 }}
           >
-            <Link to="/login">Sign In as Student</Link>
+            <Link to="/login/loginAsStudent">Login as Student</Link>
           </motion.button>
 
           <motion.button
@@ -48,7 +49,7 @@ const SignIn = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.7, delay: 1 }}
           >
-            <Link to="/signin">Sign In as Teacher</Link>
+            <Link to="/login/loginAsTeacher">Login as Teacher</Link>
           </motion.button>
 
           <motion.button
@@ -57,7 +58,7 @@ const SignIn = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.7, delay: 1 }}
           >
-            <Link to="/signin">Sign In as Administrator</Link>
+            <Link to="/login/loginAsAdministrator">Login as Administrator</Link>
           </motion.button>
         </div>
       </div>
@@ -65,4 +66,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Login;
