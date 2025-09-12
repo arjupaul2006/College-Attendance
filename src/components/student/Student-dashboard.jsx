@@ -9,6 +9,7 @@ import ClassRoom from "./components/ClassRoom";
 import UpcomingSession from "./components/UpcomingSession";
 import AttendenceCard from "./components/AttendenceCard";
 import { motion } from "framer-motion";
+import AttendanceModel from "./components/AttendanceModel";
 
 const Studentdashboard = () => {
   const [user] = useState({
@@ -96,6 +97,8 @@ const Studentdashboard = () => {
     },
   ];
 
+  const [openModel, setOpenModel] = useState(false)
+
   return (
     <div>
       <Header
@@ -162,7 +165,7 @@ const Studentdashboard = () => {
 
             <div className="space-y-6">
               {classrooms.map((classroom) => (
-                <ClassRoom key={classroom.id} classroom={classroom} />
+                <ClassRoom key={classroom.id} classroom={classroom} onOpenModel={() => setOpenModel(true)}/>
               ))}
             </div>
           </div>
@@ -206,6 +209,9 @@ const Studentdashboard = () => {
           </div>
         </div>
       </div>
+
+      {/* for taking selfie */}
+      {openModel && <AttendanceModel onClose={() => setOpenModel(false)} />}
     </div>
   );
 };

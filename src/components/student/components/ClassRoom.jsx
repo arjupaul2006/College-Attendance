@@ -7,7 +7,7 @@ import { FaClock } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 
-const ClassRoom = ({ classroom }) => {
+const ClassRoom = ({ classroom, onOpenModel }) => {
   
 
   return (
@@ -51,7 +51,7 @@ const ClassRoom = ({ classroom }) => {
             </p>
             <p className="text-xs text-blue-500 mt-1">Started 2 hours ago</p>
           </div>
-          <button className="bg-blue-600 text-white font-medium py-2 px-4 rounded-lg text-sm hover:bg-blue-700 transition-colors flex items-center space-x-2">
+          <button className="bg-blue-600 text-white font-medium py-2 px-4 rounded-lg text-sm hover:bg-blue-700 transition-colors flex items-center space-x-2" onClick={onOpenModel}>
             <FaRegClipboard size={16} />
             <span>Submit Attendance</span>
           </button>

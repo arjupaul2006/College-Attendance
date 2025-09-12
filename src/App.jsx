@@ -18,6 +18,7 @@ import SignInAdmin from './components/SignIn/SignInAdmin'
 import { useState } from 'react'
 import Studentdashboard from './components/student/Student-dashboard'
 import ProtectDashboard from './components/SignIn/ProtectDashboard'
+import CameraCapture from './components/Selfie'
 
 
 function App() {
@@ -32,6 +33,14 @@ function App() {
         <div>
           <Navbar />
           <Error />
+        </div>
+      },
+
+      {
+        path: '/selfie',
+        element:
+        <div>
+          <CameraCapture />
         </div>
       },
 
