@@ -4,7 +4,15 @@ import background from "../../assets/background.mp4";
 import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const SignInStudent = ({ data }) => {
+const SignInStudent = ({ isLoggedIn, setIsLoggedIn }) => {
+
+  const studentInfo = {
+    id: 1,
+    name: 'Arju Paul',
+    email: 'arju@gmail.com',
+    roll: '12345',
+    password: 'arju'
+  }
 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -19,12 +27,13 @@ const SignInStudent = ({ data }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(formData.name === data.name && formData.password === data.password){
+    if(formData.name === studentInfo.name && formData.password === studentInfo.password){
       console.log('Logged In')
-      navigate("/dashboard");
+      navigate("/student-dashboard");
     }
     else{
       console.log('Wrong Information')
+      setIsLoggedIn(!isLoggedIn)
     }
     setFormData({
       name: '',

@@ -16,13 +16,13 @@ import SignInStudent from './components/SignIn/SignInStudent'
 import SignInTeacher from './components/SignIn/SignInTeacher'
 import SignInAdmin from './components/SignIn/SignInAdmin'
 import { useState } from 'react'
+import Studentdashboard from './components/student/Student-dashboard'
+import ProtectDashboard from './components/SignIn/ProtectDashboard'
+
 
 function App() {
 
-  const data = {
-    name : 'Arju Paul',
-    password : 'Arju%2807'
-  }
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   
   const router = createBrowserRouter( 
     [
@@ -55,7 +55,7 @@ function App() {
         path: '/login/loginAsStudent',
         element:
         <div>
-          <LoginStudent />
+          <LoginStudent/>
         </div>
       },
 
@@ -87,7 +87,7 @@ function App() {
         path: '/signin/signinAsStudent',
         element:
         <div>
-          <SignInStudent data={data}/>
+          <SignInStudent isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         </div>
       },
       {
@@ -106,12 +106,11 @@ function App() {
       },
 
       {
-        path: '/student',
+        path: '/student-dashboard',
         element:
-        <div>
-          <Navbar />
-          <Home />
-        </div>
+        <ProtectDashboard isLoggedIn={isLoggedIn}>
+          <Studentdashboard />
+        </ProtectDashboard>
       },
 
       {
