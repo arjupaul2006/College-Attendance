@@ -29,11 +29,11 @@ const SignInStudent = ({ isLoggedIn, setIsLoggedIn }) => {
     e.preventDefault();
     if(formData.name === studentInfo.name && formData.password === studentInfo.password){
       console.log('Logged In')
+      setIsLoggedIn(true)
       navigate("/student-dashboard");
     }
     else{
       console.log('Wrong Information')
-      setIsLoggedIn(!isLoggedIn)
     }
     setFormData({
       name: '',
