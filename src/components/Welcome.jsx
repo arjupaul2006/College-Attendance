@@ -7,7 +7,6 @@ const Welcome = () => {
   return (
     <>
       <div>
-        <h1 className="absolute">welcome</h1>
         <video
           className="absolute top-0 left-0 w-full h-full object-fill"
           src={background}
